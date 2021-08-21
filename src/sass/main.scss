@@ -1,0 +1,70 @@
+@import './basicLightbox.min';
+
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.gallery {
+  display: grid;
+  width: 1200px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-auto-rows: 300px;
+  grid-gap: 12px;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery__item {
+  position: relative;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+.gallery__item:hover {
+  transform: scale(1.03);
+}
+
+.gallery__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery__link {
+  display: block;
+  text-decoration: none;
+  height: 80%;
+}
+
+.gallery__link:hover {
+  cursor: zoom-in;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-form {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pnotify-text.brighttheme-text.pnotify-text-with-max-height {
+  height: 20px;
+}
